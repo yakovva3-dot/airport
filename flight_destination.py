@@ -3,22 +3,14 @@ import json
 import pathlib
 
 def select_destination():
-    select = []
-    
     with open('available_lines.json','r') as f:
         flights_available = json.load(f)
     print(flights_available)
-    origin = input("Please enter the departure point of the flight of list: ")
+    origin_destination = input("Please enter a starting point and a destination point from the list: ")
     while origin not in flights_available:
-        print("Error! The starting point was not found.")
+        print("Error! The line does not exist in the system.")
         print(flights_available)
-        origin = input("Please enter the departure point of the flight of list: ")
-    select.append(origin)
-    print(flights_available)
-    destination = input("Please enter a flight destination of list: ")
-    while destination not in flights_available:
-        print("Error! The destination point was not found.")
-        print(flights_available)
-        destination = input("Please enter a flight destination of list: ")
-    select.append(destination)
+        origin_destination = input("Please enter a starting point and a destination point from the list: ")
+    select = flights_available[origin_destination]
+    
     return select
