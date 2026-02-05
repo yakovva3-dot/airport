@@ -11,5 +11,6 @@ def income_outgoing_budget(money,budget_file,func):
                 budget_after = str(budget_after)
                 with open(budget_file,"w") as f:
                     f.write(budget_after)
+                    return
             return "cannot purchase, since not enough money in budget"
-    return
+
