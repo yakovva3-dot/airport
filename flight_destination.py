@@ -7,7 +7,7 @@ def select_destination():
         flights_available = json.load(f)
     print(flights_available)
     origin_destination = input("Please enter a starting point and a destination point from the list: ")
-    while origin not in flights_available:
+    while origin_destination not in flights_available:
         print("Error! The line does not exist in the system.")
         print(flights_available)
         origin_destination = input("Please enter a starting point and a destination point from the list: ")
